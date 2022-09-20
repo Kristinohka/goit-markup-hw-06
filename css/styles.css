@@ -813,24 +813,29 @@ margin-right: 0;
 .register-form-field{
     position: relative;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom:10px; ;
     text-align: left;
+}
+
+.register-form-field:last-child { 
+    margin-bottom: 0;
 }
 .register-form-label{
     display: block;
+    line-height: calc(14/12);
     font-size: 12px;
     margin-bottom: 4px;
     color: var(--link-cl);
 }
 .register-form-input{
     width: 100%;
-    height: 45px;
+    height: 40px;
     padding-left: 42px;
     padding-right: 42px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     outline: transparent;
-    transition: border-color 400ms;
+    transition: border-color 400ms cubic-bezier(0.4, 0, 0.2,1);
 }
 .register-form-input:focus,
 .register-form-input:hover {
@@ -840,7 +845,7 @@ margin-right: 0;
     position: absolute;
     top: 50%;
     left: 10px;
-    transform: fill 400ms;
+    transition: fill 400ms cubic-bezier(0.4, 0, 0.2,1);
 }
 .register-form-input:focus~.register-form-icon,
 .register-form-input:hover~.register-form-icon {
@@ -854,7 +859,7 @@ margin-right: 0;
 .register-form-massage{
     display: block;
     width: 100%;
-    height: 130px;
+    height: 120px;
     padding: 18px;
     font-size: 14px;
     resize: none;
@@ -865,6 +870,10 @@ margin-right: 0;
 .register-form-massage::placeholder {
   font-size: 12px;
 }
+.register-form-massage:hover,
+.register-form-massage:focus{
+     border-color: var(--act-hero-btn);}
+
 .register-form-agreement{
 display: flex;
 align-items: center;
@@ -894,19 +903,32 @@ margin-bottom: 30px;
 }
 .register-form-btn:hover,
 .register-form-btn:focus {
-  background-color:var(--act-hero-btn);}
+  background-color:var(--act-hero-btn);
+}
 
+.register-form-checkbox {
+    display: block;
+    width: 14px;
+    height: 14px;
+    left: 68px; ;
+    border-radius: 1px solid var(--black-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .icon-checked {
   opacity: 0;
-  fill: var(--act-hero-btn);
-  transition: opacity 400ms;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .register-form-checkbox:checked + .register-form-icons .icon-checked {
   opacity: 1;
 }
 .icon-unchecked {
-  transition: opacity 400ms;
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 1px solid var(--main-bg-cl);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .register-form-checkbox:checked + .register-form-icons .icon-unchecked {
@@ -916,6 +938,7 @@ margin-bottom: 30px;
 .register-form-desc {
   font-size: 14px;
   user-select: none;
+  margin-right: 37px;
 }
 
 .register-form-link {
@@ -927,7 +950,7 @@ margin-bottom: 30px;
   |============================
 */
 .footer-form{
-    margin-left: 93px;
+    margin-left: auto;
 }
 .footer-form-p{
 font-weight: 700;
@@ -956,39 +979,37 @@ margin-bottom: 20px;
     padding-bottom: 15px;
     font-weight: 400;
     font-size: 16px;
-    line-height: 20px;
+    line-height: calc(20/16);
     letter-spacing: 0.03em;
     color: rgba(255, 255, 255, 0.6);
+    transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+}
+.footer-form-email:hover,
+.footer-form-email:focus{
+    border-color:var(--accent-cl) ;
 }
 .footer-form-button{
-width: 200px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 210px;
 height: 50px;
 background-color: var(--act-hero-btn);
 color: var(--title-cl);
 border:  var(--accent-cl);
 border-radius: 4px;
-font-family: 'Roboto';
+font-family: inherit;
 font-weight: 700;
 font-size: 16px;
 line-height: calc(30/16);
 letter-spacing: 0.06em;
 cursor: pointer;
-padding-top: 10px;
-padding-bottom: 10px;
-padding-left: 29px;
-padding-right: 62px;
+padding: 10px 28px;
 transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+gap: 10px;
 }
 .footer-form-button:hover,
 .footer-form-button:focus{
-    background-color: var(--act-hero-btn);
+   background-color: var(--act-hero-btn);
 }
-.footer-form-relativ{
-    position: relative;
-}
-.footer-form-img{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 28px;
-}
+
